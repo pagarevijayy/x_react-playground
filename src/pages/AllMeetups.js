@@ -1,4 +1,5 @@
 import MeetupList from "../components/meetups/MeetupList";
+import React, { useState, useEffect } from "react";
 
 const DUMMY_DATA = [
   {
@@ -22,6 +23,13 @@ const DUMMY_DATA = [
 ];
 
 const AllMeetupsPage = () => {
+  // Ideally, API call here to get the data (GET request)
+  // useEffect Hook will be used to make the api call as we don't want an infinite loop due
+  // useState Hook will be used to manipulate the loading and final view.
+
+  // note: component gets re-rendered when we change the state (hence, infinite loop case)
+  // more on hooks: https://reactjs.org/docs/hooks-intro.html
+
   return (
     <div className="py-8 text-center">
       <h1 className="py-3 text-xl text-indigo-600">Upcoming Meetups</h1>
